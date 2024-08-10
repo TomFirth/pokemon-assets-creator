@@ -5,7 +5,8 @@ const dirs = [
   "images/answers",
   "images/questions",
   "images/raw",
-  "images/raw_black"
+  "images/raw_black",
+  "images/cards"
 ]
 
 dirs.forEach(dir => {
@@ -13,5 +14,3 @@ dirs.forEach(dir => {
     fs.mkdirSync(dir)
   }
 })
-
-// if input exists, download pokemon

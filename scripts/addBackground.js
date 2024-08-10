@@ -1,16 +1,22 @@
-const images = require("images")
+const images = require("images");
+const config = require("../config");
+const functions = require("./functions.js");
 
-function pad (n) {
-  var len = 3 - (''  +n).length
-  return (len > 0 ? new Array(++len).join('0') : '') + n
-}
+const array = [
+  "questions",
+  "answers"
+]
 
-for (let i = 1; i < 152; i++) {
-  let number = pad(i)
-  images("./images/background.png")
-  .size(400)
-  .draw(images(`./images/raw_black/${number}.png`), 10, 10)
-  .save(`./images/questions/${number}.jpg`, {
-      quality : 80
-  })
-}
+array.forEach(value => {
+  for (let i = 1; i <= config.numberOfPokemon; i++) {
+    let number = functions.pad(i);
+    let raw = "";
+    if (value == "questions") raw = "raw_black";
+    images("./images/background.png")
+    .size(400)
+    .draw(images(`./images/${raw}/${number}.png`), 10, 10)
+    .save(`./images/${value}/${number}.jpg`, {
+        quality : 80
+    });
+  }
+});

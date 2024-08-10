@@ -4,8 +4,9 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "setup": "node scripts/setup.js"
+    "setup": "node scripts/setup.js",
+    "download": "node scripts/saveFile.js",
+    "who": "node scripts/turnThemBlack.js && node scripts/addBackground.js"
   },
   "keywords": [],
   "author": "",

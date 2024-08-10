@@ -1,11 +1,8 @@
-const sharp = require("sharp")
+const sharp = require("sharp");
+const config = require("../config");
+const functions = require("./functions.js");
 
-function pad (n) {
-  var len = 3 - (''  +n).length
-  return (len > 0 ? new Array(++len).join('0') : '') + n
-}
-
-async function createGuess(number) {
+blacken = async (number) => {
   await sharp(`./images/raw/${number}.png`)
   .modulate({
     brightness: 0,
@@ -15,10 +12,7 @@ async function createGuess(number) {
   .toFile(`./images/raw_black/${number}.png`)
 }
 
-let numberOfPokemon = 151
-numberOfPokemon++ // number has to be 1 higher than needed.
-
-for (let i = 1; i < numberOfPokemon; i++) {
-  let number = pad(i)
-  createGuess(number)
+for (let i = 1; i <= config.numberOfPokemon; i++) {
+  let number = functions.pad(i)
+  blacken(number)
 }
