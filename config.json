@@ -1,3 +1,32 @@
 {
-    "numberOfPokemon": 1025
+    "numberOfPokemon": 1025,
+    "directories": [
+      "images",
+      "images/raw",
+      "images/wtp/raw_black",
+      "images/wtp/answers",
+      "images/wtp/questions",
+      "images/tcg",
+      "images/cards"
+    ],
+    "types": {
+      "grass": "grass",
+      "bug": "grass",
+      "poison": "grass",
+      "fire": "fire",
+      "water": "water",
+      "ice": "water",
+      "electric": "electric",
+      "psychic": "psychic",
+      "ghost": "psychi",
+      "fairy": "fairy",
+      "fighting": "fighting",
+      "ground": "ground",
+      "rock": "ground",
+      "dark": "dark",
+      "steel": "steel",
+      "normal": "normal",
+      "flying": "normal",
+      "dragon": "normal"
+    }
 }

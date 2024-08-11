@@ -1,16 +1,8 @@
-const fs = require("node:fs")
+const fs = require("node:fs");
+const config = require("../config");
 
-const dirs = [
-  "images",
-  "images/answers",
-  "images/questions",
-  "images/raw",
-  "images/raw_black",
-  "images/cards"
-]
-
-dirs.forEach(dir => {
+config.directories.forEach(dir => {
   if (!fs.existsSync(dir)) {
-    fs.mkdirSync(dir)
+    fs.mkdirSync(dir);
   }
 })
